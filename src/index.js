@@ -1,12 +1,14 @@
-import _ from 'lodash'
+const L = require('lodash')
 
-const foobar = async () => {
-  return Promise.resolve('whoo')
+const init = opts => {
+  return target => {
+    target.init(target.schema, opts)
+    if (target.hooks) {
+      L.mapValues(target.hooks, (v, k) =>
+        L.each(L.castArray(v), m => target.hook(k, target[m]))
+      )
+    }
+  }
 }
 
-const foobanzle = async array => {
-  const res = await foobar()
-  return `${res} : ${_.head(array)}`
-}
-
-export default foobanzle
+module.exports = { init }
