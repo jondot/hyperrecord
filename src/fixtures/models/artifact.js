@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize')
-const { init } = require('../../index')
+const { record } = require('../../index')
 module.exports = (sequelize, DataTypes) => {
-  @init({ sequelize })
+  @record({ sequelize })
   class Artifact extends Sequelize.Model {
     static schema = {
       kind: {
