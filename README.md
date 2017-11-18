@@ -1,10 +1,11 @@
 # hyperrecord
 
-TBD
+A minimal ActiveRecord abstraction on top of Sequelize.
 
 ## Quick Start
 
-Fill me in.
+TBD
+
 
 # Contributing
 
